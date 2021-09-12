@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-12">
+            <div class="card" *ngFor="let compte of account">
+                <h5>{{ position }}:</h5>
+                <h1 class="card-title text-center">{{ compte.nom }} {{ compte.prenom }}</h1>
+                <form>
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <label for="add">Adresse</label>
+                        </div>
+                        <div class="col-7">
+                            <input id="add" type="text" placeholder="Adresse" class="text-center" value="{{ compte.adresse }}" [disabled]="!admin()"/>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <label for="mail">E-mail</label>
+                        </div>
+                        <div class="col-7">
+                            <input id="mail" type="email" placeholder="E-mail" class="text-center" value="{{ compte.email }}" [disabled]="!admin()"/>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <label for="num">Numéro</label>
+                        </div>
+                        <div class="col-7">
+                            <input id="num" type="text" placeholder="Numéro" class="text-center" pattern="[0-9]{8}"
+                                value="{{ compte.numero }}" [disabled]="!admin()"/>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center" *ngIf="disablepass()">
+                        <div class="col-3">
+                            <label for="pass">Password</label>
+                        </div>
+                        <div class="col-7">
+                            <input id="pass" type="text" placeholder="Password" class="text-center"
+                                value="{{ compte.password }}" [disabled]="!admin()"/>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center" *ngIf="chef()">
+                        <div class="col-3">
+                            <label for="spe">Projects</label>
+                        </div>
+                        <div class="col-7">
+                            <input id="spe" type="text" placeholder="Specialite" class="text-center"
+                                value="{{ compte.nb_projets }}" [disabled]="true"/>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center" *ngIf="dev()">
+                        <div class="col-3">
+                            <label for="spe">Spécialité</label>
+                        </div>
+                        <div class="col-7">
+                            <input id="spe" type="text" placeholder="Specialite" class="text-center"
+                                value="{{ compte.specialite }}" [disabled]="!admin()"/>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center" *ngIf="dev()">
+                        <div class="col-3">
+                            <label for="spe">Expérience</label>
+                        </div>
+                        <div class="col-7">
+                            <input id="spe" type="text" placeholder="Expérience" class="text-center"
+                                value="{{ compte.annee_experience }}" [disabled]="!admin()"/>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center" *ngIf="client()">
+                        <div class="col-3">
+                            <label for="entre">Entreprise</label>
+                        </div>
+                        <div class="col-7">
+                            <input id="entre" type="text" placeholder="Entreprise" class="text-center"
+                                value="{{ compte.entreprise }}" [disabled]="!admin()"/>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-9">
+                            <button type="submit" class="btn btn-lg btn-block" (click)="modifier()" id="but" *ngIf="admin()">
+                                Modify
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

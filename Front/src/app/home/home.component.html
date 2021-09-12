@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-md-9 col-11">
+        <table class="table table-hover text-center">
+            <thead>
+                <tr id="">
+                    <th>Project</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let project of projects">
+                    <td><a class="nav-link user" routerLink='/project/ {{ project.id }}' id="link">{{ project.nom }}</a>
+                    </td>
+                    <td><a class="nav-link user" routerLink='/project/ {{ project.id }}' id="link">{{ project.date
+                            }}</a></td>
+                    <td><a class="nav-link user" routerLink='/project/ {{ project.id }}' id="link">
+                            <input type="checkbox" disabled [checked]="check(project.status)" />
+                        </a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-5 col-8 text-center">
+        <button *ngIf="positionchef()" class="nav-link btn-block" routerLink="/createp" id="create">Create
+            Project</button>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-5 col-8 text-center">
+        <button *ngIf="positionadmin()" class="nav-link btn-block" routerLink="/signup" id="create">Create User</button>
+    </div>
+</div>

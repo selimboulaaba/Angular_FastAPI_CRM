@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-12">
+            <div class="card">
+                <h1 class="card-title">Sign Up</h1>
+                <form [formGroup]="form" (ngSubmit)="signup()">
+                    <div class="row justify-content-center">
+                        <!--Begin Position-->
+                        <div class="col justify-content-center">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="position" id="chef" value="chef"
+                                    formControlName="position">
+                                <div class="radio"></div>
+                                <label class="form-check-label" for="chef">Chef</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="position" id="developper"
+                                    value="developper" formControlName="position">
+                                <div class="radio"></div>
+                                <label class="form-check-label" for="developper">Developper</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="position" id="client" value="client"
+                                    formControlName="position">
+                                <div class="radio"></div>
+                                <label class="form-check-label" for="client">Client</label>
+                            </div>
+                        </div>
+                        <!--End Position-->
+                        <!--Begin User-->
+                        <div class="col-9">
+                            <input formControlName="nom" type="text" placeholder="Saisir Nom" class="text-center">
+                        </div>
+                        <div class="col-9">
+                            <input formControlName="prenom" type="text" placeholder="Saisir Prénom" class="text-center">
+                        </div>
+                        <div class="col-9">
+                            <input formControlName="adresse" type="text" placeholder="Saisir Adresse"
+                                class="text-center">
+                        </div>
+                        <div class="col-9">
+                            <input formControlName="email" type="email" placeholder="Saisir E-mail" class="text-center">
+                        </div>
+                        <div class="col-9">
+                            <input formControlName="numero" type="text" placeholder="Saisir Numéro" class="text-center"
+                                pattern="[0-9]{8}">
+                        </div>
+                        <div class="col-9">
+                            <input formControlName="password" type="password" placeholder="Saisir Password"
+                                class="text-center">
+                        </div>
+                        <!--End User-->
+                        <div class="col-9">
+                            <input id="entre" *ngIf='client()' formControlName="entreprise" type="text"
+                                placeholder="Saisir Entreprise" class="text-center">
+                        </div>
+                        <div class="col-9">
+                            <input id="spec" *ngIf='dev()' formControlName="specialite" type="text"
+                                placeholder="Saisir Specialite" class="text-center">
+                        </div>
+                        <div class="col-9">
+                            <input id="ann" *ngIf='dev()' formControlName="annee" type="text"
+                                placeholder="Saisir Expérience" class="text-center" pattern="[0-9]{4}">
+                        </div>
+                        <div class="col-9">
+                            <button type="submit" class="btn btn-lg btn-block">Register</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

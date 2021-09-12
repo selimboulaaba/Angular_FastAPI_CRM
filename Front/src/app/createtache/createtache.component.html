@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-9 col-12">
+            <div class="card">
+                <div class="container">
+                    <h1 class="text-center">Création d'une tâche</h1>
+                    <form [formGroup]="form" (ngSubmit)="createtache()">
+                        <div class="row">
+                            <div class="offset-1 col">
+                                <label for="nom">Nom du tâche:</label>
+                            </div>
+                            <div class="offset-1 col-10">
+                                <input formControlName="nom" type="text" placeholder="Nom du projet">
+                            </div>
+                            <div class="offset-1 col">
+                                <label for="desc">Description:</label>
+                            </div>
+                            <div class="offset-1 col-10">
+                                <textarea formControlName="description" placeholder="Description"></textarea>
+                            </div>
+                            <div class="offset-1 col">
+                                <label for="date">Date:</label>
+                            </div>
+                            <div class="offset-1 col-10">
+                                <input formControlName="date" type="date">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-10">
+                                <button type="submit" class="btn btn-lg btn-block" [disabled]="!this.form.valid">Create Tâche</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

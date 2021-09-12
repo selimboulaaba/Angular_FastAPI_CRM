@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-7 col-12">
+            <div class="card">
+                <h1 class="card-title">Sign In</h1>
+                <form [formGroup]="form" (ngSubmit)="login()">
+                    <div class="row justify-content-center">
+                        <div class="col-9">
+                            <input formControlName="email" type="text" placeholder="E-mail" class="text-center">
+                        </div>
+                        <div class="col-9">
+                            <input formControlName="password" type="password" placeholder="Password" class="text-center">
+                        </div>
+                        <div class="col-9">
+                            <button type="submit" class="btn btn-lg btn-block" [disabled]="!this.form.valid">Connect</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

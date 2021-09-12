@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row">
+        <div class="offset-lg-1 col-lg-10 col-12">
+            <div class="card" id="project">
+                <div class="container">
+                    <h2 class="card-title">{{ project.nom }}</h2>
+                    <a *ngIf="positionchef()" class="nav-link img" routerLink='/modifyp/ {{ id_project }}'>
+                        <img src="{{ edit }}" id="editp">
+                    </a> <br>
+                    <p id="dp">{{ project.description }}</p> <br>
+                    <h5 id="p">Chef:</h5>
+                    <p id="m"><a class="nav-link" routerLink='/account/{{ project.chef }}/chef' id="account">{{
+                            project.chef }}</a></p><br>
+                    <h5 id="p">Développeur:</h5>
+
+                    <p id="m" *ngFor="let d of dev"><a class="nav-link" routerLink='/account/{{ d }}/developper'
+                            id="account">{{ d }}</a></p><br>
+
+                    <h5 id="p">Client:</h5>
+
+                    <p id="m" *ngFor="let c of cl"><a class="nav-link" routerLink='/account/{{ c }}/client'
+                            id="account">{{ c }}</a></p><br>
+
+                    <h5 id="p">Date:</h5>
+                    <p id="m">{{ project.date }}</p><br>
+                </div>
+            </div>
+        </div>
+        <div class="offset-lg-1 col-lg-10 col-12">
+            <div class="row">
+                <div class="col-md-6 col-12" *ngFor="let tache of taches">
+                    <div class="card" id="tache">
+                        <div class="container">
+                            <h4>{{ tache.nom }}</h4>
+                            <a *ngIf="positionchef()" class="nav-link img"
+                                routerLink='/modifyt/ {{ id_project }}/ {{ tache.id }}'>
+                                <img src="{{ edit }}" id="editt">
+                            </a> <br>
+                            <p id="dt">{{ tache.description }}</p><br>
+                            <h5 id="t">Date:</h5>
+                            <p id="m">{{ tache.date }}</p><br>
+                            <h5 id="t">Review:</h5>
+                            <p id="m" *ngIf="!positionclient()">{{ tache.review }}</p><br>
+                            <span id="{{ tache.id }}" class="textarea" role="textbox" contenteditable *ngIf="positionclient()">{{ tache.review }}</span>
+                            <button (click)="review(tache.id)" *ngIf="positionclient()">Confirm Review</button><br *ngIf="positionclient()">
+                            <h5 id="t" style="margin-top: 10px">Completed:</h5>
+                            <input type="checkbox" id="check" [disabled]="!positiondev()"
+                                [checked]="checked(tache.status)" (click)="check(tache.id)">
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="positionchef()" class="col-md-6 col-12">
+                    <div class="card" id="tache">
+                        <a class="nav-link add justify-content-center" routerLink='/createt/ {{ id_project }}'>
+                            <img src="{{ add }}" id="add">
+                        </a>
+                        <a class="nav-link add justify-content-center" routerLink='/createt/ {{ id_project }}'>
+                            <div class="card-body align-items-center d-flex justify-content-center">
+                                Créer une tâche
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  

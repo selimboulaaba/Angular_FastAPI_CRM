@@ -1,0 +1,35 @@
+table {
+    margin-top: 50px;
+}
+thead{
+    background-color: #EDEDF5;
+    font-size: 23px;
+}
+tbody {
+    font-size: 19px;
+}
+tbody tr:hover {
+    transform: scale(1.1);
+}
+input {
+    width: 20px;
+    height: 20px;
+}
+#create {
+    background: black;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 15px;
+    color: white;
+    margin-top: 10px;
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+#create:hover {
+    color: #8b8bbf;
+    background-color: #333333;
+}
+#link {
+    padding: 0px;
+    color: black;
+}

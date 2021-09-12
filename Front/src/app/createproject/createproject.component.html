@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-9 col-12">
+            <div class="card">
+                <div class="container">
+                    <h1 class="text-center">Création d'un projet</h1>
+                    <form [formGroup]="form" (ngSubmit)="create()">
+                        <div class="row">
+                            <div class="offset-1 col">
+                                <label for="nom">Nom du projet:</label>
+                            </div>
+                            <div class="offset-1 col-10">
+                                <input formControlName="nom" type="text" placeholder="Nom du projet">
+                            </div>
+                            <div class="offset-1 col">
+                                <label for="desc">Description:</label>
+                            </div>
+                            <div class="offset-1 col-10">
+                                <textarea formControlName="description" placeholder="Description"></textarea>
+                            </div>
+                            <div class="offset-1 col">
+                                <label for="date">Date:</label>
+                            </div>
+                            <div class="offset-1 col-10">
+                                <input formControlName="date" type="date">
+                            </div>
+                            <div class="offset-1 col">
+                                <label for="developpeur">Ajouter les développeurs:</label>
+                            </div>
+                            <div class="offset-1 col-10">
+                                <input formControlName="developper" type="text" placeholder="Développeurs">
+                            </div>
+                            <div class="offset-1 col">
+                                <label for="client">Ajouter les clients:</label>
+                            </div>
+                            <div class="offset-1 col-10">
+                                <input formControlName="client" type="text" placeholder="Clients">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-10">
+                                <button type="submit" class="btn btn-lg btn-block" [disabled]="!this.form.valid">Create Project</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

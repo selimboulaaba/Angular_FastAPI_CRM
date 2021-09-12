@@ -1,0 +1,15 @@
+<div class="navbar">
+    <a class="nav-link" routerLink='/home' id="crm">
+        <img src="{{ logo }}" id="logo">CRM
+    </a>
+    <a></a>
+    <a></a>
+    <a class="nav-link user" (click)="account()" *ngIf="isAdmin()">
+        <img src="{{ user }}" id="icon">
+    </a>
+    <a class="logout" *ngIf="isLoggedIn()" (click)="signout()">
+        <img src="{{ logout }}" id="icon">
+    </a>
+</div>
+
+<hr class="center">

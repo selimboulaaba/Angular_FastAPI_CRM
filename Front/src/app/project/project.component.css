@@ -1,0 +1,119 @@
+.card {
+    background: #EDEDF5;
+    border: 1.5px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+#project {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+#tache {
+    margin-bottom: 30px;
+    height: 88%;
+}
+h2 {
+    margin: 20px 15px 0px 15px;
+    color: #005BAE;
+}
+@media (max-width: 430px) {
+    h2 {
+        font-size: 30px
+    }
+}
+h4 {
+    margin: 15px 10px 0px 15px;
+    color: #005BAE;
+}
+#dp {
+    margin: 20px 15px 15px 15px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+#dt {
+    margin: 15px 10px 15px 15px;
+    font-size: 16px;
+}
+#p {
+    margin-left: 15px;
+    color: #005BAE;
+}
+#t {
+    margin-left: 15px;
+    color: #005BAE;
+}
+.container h5, .container p, .container h2, .container a,.container h4, .container input {
+    display: inline-flex;
+}
+#m {
+    margin-left: 10px;
+    margin-bottom: 8px;
+}
+#check {
+    margin-left: 10px;
+    margin-bottom: 7px;
+}
+.container:nth-last-child(1) {
+    margin-bottom: 15px;
+}
+#editp {
+    width: 50px;
+    margin-top: 10px;
+}
+#editt {
+    width: 40px;
+    margin-top: 10px;
+}
+.img {
+    float: right;
+    padding: 0px;
+}
+input[type='checkbox'] {
+    width: 16px;
+    height: 16px;
+}
+.add {
+    color: black;
+    font-size: 20px;
+}
+#add {
+    width: 60px;
+    margin-top: 8%;
+}
+#account {
+    padding: 0px;
+    color: black;
+}
+.textarea {
+    margin-left: 10px;
+    margin-bottom: 8px;
+    padding-left: 5px;
+    background-color: #EDEDF5;
+    border: 0px;
+    border-radius: 5px;
+    border-bottom: 1px solid black;
+    display: block;
+    resize: vertical;
+    min-height: 30px;
+    line-height: 23px;
+}
+.textarea:focus {
+    outline: none;
+}
+button {
+    margin: 0px;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: #EDEDF5;
+    border: 2px solid #005BAE;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #005BAE;
+    font-size: 15px;
+}
+button:focus {
+    box-shadow: none ;
+}
